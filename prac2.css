@@ -11,11 +11,13 @@ table {
 	width: 100%;
 }
 td#emptycell { background-color: #E3E3ED; }
-table#faculty{ margin-top: 50px; 
+
+table#faculty { 
+	margin-top: 50px; 
 	position: relative;
 }
 thead {
 	background-color: gray;
 	color: white;	
 }
-th.horizontal { height: 30px; } 
+table#main thead th{ height: 30px; } /* Descentant selector: selects all th tags under thead tag */
