@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title> Student Feedabck Form</title>
+		<script type="text/javascript">
+			function validateForm() {
+    			var course = document.getElementById("course").value;
+    			if(course == ""){
+    				document.getElementById("courseInfoError").innerHTML = "Couse code is a required field";
+    				document.feedback.course.focus();
+    				return false;
+    			}
+    			var instructor = document.feedback.instructor.value;
+    			if(instructor == ""){
+					document.getElementById("instructorInfoError").innerHTML = "Instructor name is a required field";
+    				document.feedback.instructor.focus();
+    				return false;
+    			}
+			}
+		</script>
+		<style type="text/css">
+			form,header{
+				text-align: center;
+			}
+			table{
+				align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h3>LDRP Intstitue of Tech. & Research, Gandhinagar</h3> <hr /> 
+		    Student Feedback Form,Department of Computer Engineering <br /> <br />
+		</header>
+		<form method="POST" onsubmit="javascript: return validateForm()" name="feedback">
+			<fieldset>
+				<legend>Course Information : </legend>
+				Course Code : 
+				<input type="text" id="course"> 
+				<id="courseInfoError"> </p>
+				Instructor Name :
+				<input type="text" id="instructor">
+				<id="instructorInfoError"> </p>
+			</fieldset>
+			<br />
+			<fieldset>
+				<legend>Ratings : </legend>
+			<table width="75%">
+				<tr>
+					<td></td>
+					<td>Strongly Agree</td> 
+					<td>Degree</td>
+					<td>No Opinion</td>
+					<td>Disagree</td>
+					<td>Strongly Disgree</td>
+				</tr>
+				<tr/>
+				<tr>
+					<td>The teacher is enthusiatic about teaching. </td>
+					<td> <input type="radio" name="q1" value="SA1"/></td>
+					<td> <input type="radio" name="q1" value="A1"/></td>
+					<td> <input type="radio" name="q1" value="NO1"/></td>
+					<td> <input type="radio" name="q1" value="D1"/></td>
+					<td> <input type="radio" name="q1" value="SD1"/></td>
+				</tr>
+				<tr/>
+				<tr>
+					<td>The teacher is able to explain material clearly. </td>
+					<td> <input type="radio" name="q2"  value="SA2"/></td>
+					<td> <input type="radio" name="q2" value="A2"/></td>
+					<td> <input type="radio" name="q2" value="NO2"/></td>
+					<td> <input type="radio" name="q2" value="D2"/></td>
+					<td> <input type="radio" name="q2" value="SD2"/></td>
+				</tr>
+				<tr/>
+				<tr>
+					<td>The teacher mantains the atomsphere helpful to learning. </td>
+					<td> <input type="radio" name="q3" value="SA3"/></td>
+					<td> <input type="radio" name="q3" value="A3"/></td>
+					<td> <input type="radio" name="q3" value="NO3"/></td>
+					<td> <input type="radio" name="q3" value="D3"/></td>
+					<td> <input type="radio" name="q3" value="SA3"/></td>
+				</tr>
+				<tr>
+					<td>The teacher is interested in my progess and success. </td>
+					<td> <input type="radio" name="q4" value="SA4"/></td>
+					<td> <input type="radio" name="q4" value="A4"/></td>
+					<td> <input type="radio" name="q4" value="NO4"/></td>
+					<td> <input type="radio" name="q4" value="D4"/></td>
+					<td> <input type="radio" name="q4" value="SD4"/></td>
+				</tr>
+				<tr/>
+				<tr>
+					<td>The teacher uses classtime effectively. </td>
+					<td><input type="radio" name="q5" value="SA5"/></td>
+					<td><input type="radio" name="q5" value="A5"/></td>
+					<td><input type="radio" name="q5" value="NO5"/></td>
+					<td><input type="radio" name="q5" value="D5"/></td>
+					<td><input type="radio" name="q5" value="SD5"/></td>
+				</tr>
+			</table>
+			</fieldset> <br />
+			<fieldset>
+				<legend>Suggestions to improve course: (Optional)</legend>
+			<textarea name="sugestions" rows="5" cols="100"> </textarea> <br />
+			</fieldset> 
+			<br />
+			<input type="submit" value="Submit" onclick="javascript: return validateForm()">
+			<input type="reset" value="Reset">
+		</form>
+		<address>*-indicates required field</address>
+	</body>
+</html>
