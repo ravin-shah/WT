@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title> Student Feedabck Form</title>
+	</head>
+	<body>
+		<center>
+			<h3>LDRP Intstitue of Tech. & Research, Gandhinagar</h3> <hr /> 
+		    Student Feedback Form,Department of Computer Engineering <br /> <br />
+		</center>
+		<form method="POST" >
+			<center>
+				<fieldset>
+				<legend>Course Information:</legend>
+					Course Code : 
+					<input type="text" name="course" required> 
+					Instructor Name :
+					<input type="text" name="instructor" required> <br />
+				</fieldset>
+				<br />
+				<fieldset>
+					<legend>Ratings : </legend>
+				<table width="75%">
+					<tr align="center">
+						<td></td>
+						<td>Strongly Agree</td> 
+						<td>Degree</td>
+						<td>No Opinion</td>
+						<td>Disagree</td>
+						<td>Strongly Disgree</td>
+					</tr>
+					<tr/>
+					<tr align="center">
+						<td>The teacher is enthusiatic about teaching. </td>
+						<td> <input type="radio" name="q1" value="SA1"/></td>
+						<td> <input type="radio" name="q1" value="A1"/></td>
+						<td> <input type="radio" name="q1" value="NO1"/></td>
+						<td> <input type="radio" name="q1" value="D1"/></td>
+						<td> <input type="radio" name="q1" value="SD1"/></td>
+					</tr>
+					<tr/>
+					<tr align="center">
+						<td>The teacher is able to explain material clearly. </td>
+						<td> <input type="radio" name="q2"  value="SA2"/></td>
+						<td> <input type="radio" name="q2" value="A2"/></td>
+						<td> <input type="radio" name="q2" value="NO2"/></td>
+						<td> <input type="radio" name="q2" value="D2"/></td>
+						<td> <input type="radio" name="q2" value="SD2"/></td>
+					</tr>
+					<tr/>
+					<tr align="center">
+						<td>The teacher mantains the atomsphere helpful to learning. </td>
+						<td> <input type="radio" name="q3" value="SA3"/></td>
+						<td> <input type="radio" name="q3" value="A3"/></td>
+						<td> <input type="radio" name="q3" value="NO3"/></td>
+						<td> <input type="radio" name="q3" value="D3"/></td>
+						<td> <input type="radio" name="q3" value="SA3"/></td>
+					</tr>
+					<tr align="center">
+						<td>The teacher is interested in my progess and success. </td>
+						<td> <input type="radio" name="q4" value="SA4"/></td>
+						<td> <input type="radio" name="q4" value="A4"/></td>
+						<td> <input type="radio" name="q4" value="NO4"/></td>
+						<td> <input type="radio" name="q4" value="D4"/></td>
+						<td> <input type="radio" name="q4" value="SD4"/></td>
+					</tr>
+					<tr/>
+					<tr align="center">
+						<td>The teacher uses classtime effectively. </td>
+						<td><input type="radio" name="q5" value="SA5"/></td>
+						<td><input type="radio" name="q5" value="A5"/></td>
+						<td><input type="radio" name="q5" value="NO5"/></td>
+						<td><input type="radio" name="q5" value="D5"/></td>
+						<td><input type="radio" name="q5" value="SD5"/></td>
+					</tr>
+				</table>
+				</fieldset> <br />
+				<fieldset>
+					<legend>Suggestions to improve course: </legend>
+				<textarea name="sugestions" rows="5" cols="100"> </textarea> <br />
+				</fieldset> 
+				<br />
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset">
+			</center>
+		</form>
+	</body>
+</html>
