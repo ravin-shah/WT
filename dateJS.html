@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Date</title>
+	<script type="text/javascript">
+	function displayDate() {
+		debugger;
+		var d = new Date();
+		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		date = days[d.getDay()] + ", ";
+		date += d.getDate();
+		if(d.getDay()%10==1)
+			date += "st ";
+		else if(d.getDay()%10==2)
+			date += "nd ";
+		else if(d.getDay()%10==3)
+			date += "rd ";
+		else
+			date += "th "
+		date += months[d.getMonth()] + " ";
+		date += d.getFullYear() + " ";
+		document.getElementById("demo").innerHTML = date;
+	}
+	</script>
+</head>
+<body>
+<p>Click the button to display today's date</p>
+<!-- <button onclick="document.getElementById('demo').innerHTML = Date()">Display Date</button> -->
+<button onclick="displayDate()">Display Date</button>
+<p id="demo"> </p>
+</body>
+</html>
