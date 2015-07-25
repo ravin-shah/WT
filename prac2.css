@@ -1,0 +1,21 @@
+h3,h4 { text-align: center; }
+caption { padding-bottom: 20px; }
+table, th, td{
+	vertical-align: center;
+	text-align: center;
+	border: 1px solid black;
+}
+td {  padding: 3px 7px 2px 7px;}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+td#emptycell { background-color: #E3E3ED; }
+table#faculty{ margin-top: 50px; 
+	position: relative;
+}
+thead {
+	background-color: gray;
+	color: white;	
+}
+th.horizontal { height: 30px; } 
