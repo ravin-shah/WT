@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Test your number</title>
+	<script type="text/javascript">
+		function check(){
+			var number = document.getElementById("inputNumber").value;
+			if(number%2==0)
+				document.getElementById("answer").innerHTML="<h4>" + "Even Number" + "</h4>";
+			else
+				document.getElementById("answer").innerHTML="<h4>Odd Number</h4>";
+		}
+		function infinite(){
+			var i = 0;
+			var text = "";
+    		while (i < 10) {
+        		text += "<br>The number is " + i;
+        		i++;
+    		}
+    	document.getElementById("answer").innerHTML = text;
+		}
+	</script>
+</head>
+<body>
+	<h4> Enter a number in textbox to check wheter it is even or odd </h4>
+	<input type="text" id="inputNumber" />
+	<input type="button" value="Check !!" onClick="check()"/>
+	<p id="answer"></p>
+</body>
+</html>
