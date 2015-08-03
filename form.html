@@ -1,6 +1,15 @@
 <html>
 	<head>
 		<title> Student Feedabck Form</title>
+		<script>
+			function myFunction() {
+    		var txt = "";
+    		if (document.getElementById("course").validity.valid) {
+   		    txt = "Value too large";
+    		}
+    		document.getElementById("courseInfoErrorParagraph").innerHTML = txt;
+		}
+	</script>
 	</head>
 	<body>
 		<center>
@@ -12,9 +21,10 @@
 				<fieldset>
 				<legend>Course Information:</legend>
 					Course Code : 
-					<input type="text" name="course" required> 
+					<input type="text" name="course"> 
 					Instructor Name :
-					<input type="text" name="instructor" required> <br />
+					<input type="text" name="instructor"> <br />
+					<p id="courseInfoErrorParagraph"> </p>
 				</fieldset>
 				<br />
 				<fieldset>
@@ -75,7 +85,7 @@
 				</table>
 				</fieldset> <br />
 				<fieldset>
-					<legend>Suggestions to improve course: </legend>
+					<legend>Suggestions to improve course: (Optional)</legend>
 				<textarea name="sugestions" rows="5" cols="100"> </textarea> <br />
 				</fieldset> 
 				<br />
@@ -83,5 +93,6 @@
 				<input type="reset" value="Reset">
 			</center>
 		</form>
+		<address>*-indicates required field</address>
 	</body>
 </html>
