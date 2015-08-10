@@ -1,17 +1,17 @@
 <html>
 	<head>
-		<title> Student Feedabck Form</title>
+		<title> Student Feedback Form</title>
 		<script type="text/javascript">
+			"use script"
 			function validateForm() {
-    			var course = document.getElementById("course").value;
+		  		var course = document.getElementById("course").value;
     			var coursePattern = /^cc[1-8]0[1-6]$/i;
-    			if(course == ""){
-    				document.getElementById("courseInfoError").innerHTML = "Couse code is a required field.";
+    			if(course == "") {
+    				document.getElementById("courseInfoError").innerHTML = "Course code is a required field.";
     				document.feedback.course.focus();
     				return false;
     			}
-    			else if(!coursePattern.test(course))
-    			{
+    			else if(!coursePattern.test(course)) {
     				document.getElementById("courseInfoError").innerHTML = "Incorrect course code entered.";
     				document.feedback.course.focus();
     				return false;
@@ -19,20 +19,19 @@
 
     			var instructorName = document.feedback.instructor.value;
     			var namePattern = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
-    			if(instructor == ""){
+    			if(instructor == "") {
 					document.getElementById("courseInfoError").innerHTML = "Instructor name is a required field.";
     				document.feedback.instructor.focus();
     				return false;
     			}
-    			else if(!namePattern.test(instructorName))
-    			{
+    			else if(!namePattern.test(instructorName)) {
     				document.getElementById("courseInfoError").innerHTML = "Incorrect instructor name.";
     				document.feedback.instructor.focus();
     				return false;
     			}
 
     			if(!checkRadio(document.feedback.q1)) {
-				    alert("Radio field missing");
+				    document.getElementById("radioNotFilledq1").innerHTML = "Radio field missing";
 				    return false;
 				} 
 			}
@@ -47,17 +46,17 @@
 
 		</script>
 		<style type="text/css">
-			form,header{
+			header,form{
 				text-align: center;
 			}
-			table{
-				align: center;
+			td.radioNotFilled{
+				align: right;
 			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<h3>LDRP Intstitue of Tech. & Research, Gandhinagar</h3> <hr /> 
+			<h3>LDRP Institute of Tech. & Research, Gandhinagar</h3> <hr /> 
 		    Student Feedback Form,Department of Computer Engineering <br /> <br />
 		</header>
 		<form method="POST" onsubmit="javascript: return validateForm()" name="feedback">
@@ -80,15 +79,17 @@
 					<td>No Opinion</td>
 					<td>Disagree</td>
 					<td>Strongly Disagree</td>
+					<td class="radioNotFilled"></td>
 				</tr>
 				<tr/>
 				<tr>
-					<td>The teacher is enthusiatic about teaching. </td>
+					<td>The teacher is enthusiastic about teaching. </td>
 					<td> <input type="radio" name="q1" value="SA1"/></td>
 					<td> <input type="radio" name="q1" value="A1"/></td>
 					<td> <input type="radio" name="q1" value="NO1"/></td>
 					<td> <input type="radio" name="q1" value="D1"/></td>
 					<td> <input type="radio" name="q1" value="SD1"/></td>
+					<td class="radioNotFilled" id="radioNotFilledq1"></td>
 				</tr>
 				<tr/>
 				<tr>
@@ -98,32 +99,35 @@
 					<td> <input type="radio" name="q2" value="NO2"/></td>
 					<td> <input type="radio" name="q2" value="D2"/></td>
 					<td> <input type="radio" name="q2" value="SD2"/></td>
+					<td class="radioNotFilled" id="radioNotFilledq2"></td>
 				</tr>
 				<tr/>
 				<tr>
-					<td>The teacher mantains the atomsphere helpful to learning. </td>
+					<td>The teacher maintains the atmosphere helpful to learning. </td>
 					<td> <input type="radio" name="q3" value="SA3"/></td>
 					<td> <input type="radio" name="q3" value="A3"/></td>
 					<td> <input type="radio" name="q3" value="NO3"/></td>
 					<td> <input type="radio" name="q3" value="D3"/></td>
 					<td> <input type="radio" name="q3" value="SA3"/></td>
+					<td class="radioNotFilled" id="radioNotFilledq3"></td>
 				</tr>
 				<tr>
-					<td>The teacher is interested in my progess and success. </td>
+					<td>The teacher is interested in my progress and success. </td>
 					<td> <input type="radio" name="q4" value="SA4"/></td>
 					<td> <input type="radio" name="q4" value="A4"/></td>
 					<td> <input type="radio" name="q4" value="NO4"/></td>
 					<td> <input type="radio" name="q4" value="D4"/></td>
 					<td> <input type="radio" name="q4" value="SD4"/></td>
+					<td class="radioNotFilled" id="radioNotFilledq4"></td>
 				</tr>
-				<tr/>
 				<tr>
-					<td>The teacher uses classtime effectively. </td>
+					<td>The teacher uses class time effectively. </td>
 					<td><input type="radio" name="q5" value="SA5"/></td>
 					<td><input type="radio" name="q5" value="A5"/></td>
 					<td><input type="radio" name="q5" value="NO5"/></td>
 					<td><input type="radio" name="q5" value="D5"/></td>
 					<td><input type="radio" name="q5" value="SD5"/></td>
+					<td class="radioNotFilled" id="radioNotFilledq5"></td>
 				</tr>
 			</table>
 			</fieldset> <br />
@@ -132,6 +136,7 @@
 			<textarea name="sugestions" rows="5" cols="100"> </textarea> <br />
 			</fieldset> 
 			<br />
+
 			<input type="submit" value="Submit" onclick="javascript: return validateForm()">
 			<input type="reset" value="Reset">
 		</form>
