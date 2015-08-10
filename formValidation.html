@@ -4,18 +4,47 @@
 		<script type="text/javascript">
 			function validateForm() {
     			var course = document.getElementById("course").value;
+    			var coursePattern = /^cc[1-8]0[1-6]$/i;
     			if(course == ""){
-    				document.getElementById("courseInfoError").innerHTML = "Couse code is a required field";
+    				document.getElementById("courseInfoError").innerHTML = "Couse code is a required field.";
     				document.feedback.course.focus();
     				return false;
     			}
-    			var instructor = document.feedback.instructor.value;
+    			else if(!coursePattern.test(course))
+    			{
+    				document.getElementById("courseInfoError").innerHTML = "Incorrect course code entered.";
+    				document.feedback.course.focus();
+    				return false;
+    			}
+
+    			var instructorName = document.feedback.instructor.value;
+    			var namePattern = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
     			if(instructor == ""){
-					document.getElementById("instructorInfoError").innerHTML = "Instructor name is a required field";
+					document.getElementById("courseInfoError").innerHTML = "Instructor name is a required field.";
     				document.feedback.instructor.focus();
     				return false;
     			}
+    			else if(!namePattern.test(instructorName))
+    			{
+    				document.getElementById("courseInfoError").innerHTML = "Incorrect instructor name.";
+    				document.feedback.instructor.focus();
+    				return false;
+    			}
+
+    			if(!checkRadio(document.feedback.q1)) {
+				    alert("Radio field missing");
+				    return false;
+				} 
 			}
+
+			function checkRadio(field) {
+				for(var i=0; i < field.length; i++) {
+					if(field[i].checked) 
+						return field[i].value;
+				}
+				return false;
+			}
+
 		</script>
 		<style type="text/css">
 			form,header{
@@ -36,10 +65,9 @@
 				<legend>Course Information : </legend>
 				Course Code : 
 				<input type="text" id="course"> 
-				<id="courseInfoError"> </p>
 				Instructor Name :
 				<input type="text" id="instructor">
-				<id="instructorInfoError"> </p>
+				<h5 id="courseInfoError"> </h5>
 			</fieldset>
 			<br />
 			<fieldset>
@@ -48,10 +76,10 @@
 				<tr>
 					<td></td>
 					<td>Strongly Agree</td> 
-					<td>Degree</td>
+					<td>Agree</td>
 					<td>No Opinion</td>
 					<td>Disagree</td>
-					<td>Strongly Disgree</td>
+					<td>Strongly Disagree</td>
 				</tr>
 				<tr/>
 				<tr>
