@@ -2,7 +2,7 @@
 	<head>
 		<title> Student Feedback Form</title>
 		<script type="text/javascript">
-			"use script"
+			"use strict"
 			function validateForm() {
 		  		var course = document.getElementById("course").value;
     			var coursePattern = /^cc[1-8]0[1-6]$/i;
@@ -46,11 +46,14 @@
 
 		</script>
 		<style type="text/css">
-			header,form{
+			header,fieldset,th{
 				text-align: center;
 			}
-			td.radioNotFilled{
-				align: right;
+			legend{
+				text-align: left;
+			}
+			input[type="radio"],input[type="submit"],input[type="reset"]{
+				align: center; 
 			}
 		</style>
 	</head>
@@ -59,7 +62,7 @@
 			<h3>LDRP Institute of Tech. & Research, Gandhinagar</h3> <hr /> 
 		    Student Feedback Form,Department of Computer Engineering <br /> <br />
 		</header>
-		<form method="POST" onsubmit="javascript: return validateForm()" name="feedback">
+		<form method="POST" onSubmit="javascript: return validateForm()" name="feedback">
 			<fieldset>
 				<legend>Course Information : </legend>
 				Course Code : 
@@ -74,14 +77,12 @@
 			<table width="75%">
 				<tr>
 					<td></td>
-					<td>Strongly Agree</td> 
-					<td>Agree</td>
-					<td>No Opinion</td>
-					<td>Disagree</td>
-					<td>Strongly Disagree</td>
-					<td class="radioNotFilled"></td>
+					<th>Strongly Agree</th> 
+					<th>Agree</th>
+					<th>No Opinion</th>
+					<th>Disagree</th>
+					<th>Strongly Disagree</th>
 				</tr>
-				<tr/>
 				<tr>
 					<td>The teacher is enthusiastic about teaching. </td>
 					<td> <input type="radio" name="q1" value="SA1"/></td>
@@ -91,7 +92,6 @@
 					<td> <input type="radio" name="q1" value="SD1"/></td>
 					<td class="radioNotFilled" id="radioNotFilledq1"></td>
 				</tr>
-				<tr/>
 				<tr>
 					<td>The teacher is able to explain material clearly. </td>
 					<td> <input type="radio" name="q2"  value="SA2"/></td>
