@@ -34,6 +34,22 @@
 				    document.getElementById("radioNotFilledq1").innerHTML = "Radio field missing";
 				    return false;
 				} 
+				if(!checkRadio(document.feedback.q2)) {
+				    document.getElementById("radioNotFilledq2").innerHTML = "Radio field missing";
+				    return false;
+				} 
+				if(!checkRadio(document.feedback.q3)) {
+				    document.getElementById("radioNotFilledq3").innerHTML = "Radio field missing";
+				    return false;
+				} 
+				if(!checkRadio(document.feedback.q4)) {
+				    document.getElementById("radioNotFilledq4").innerHTML = "Radio field missing";
+				    return false;
+				} 
+				if(!checkRadio(document.feedback.q5)) {
+				    document.getElementById("radioNotFilledq5").innerHTML = "Radio field missing";
+				    return false;
+				} 
 			}
 
 			function checkRadio(field) {
@@ -137,7 +153,7 @@
 			</fieldset> 
 			<br />
 
-			<input type="submit" value="Submit" onclick="javascript: return validateForm()">
+			<input type="submit" value="Submit">
 			<input type="reset" value="Reset">
 		</form>
 		<address>*-indicates required field</address>
